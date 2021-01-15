@@ -193,13 +193,12 @@ void print_trie_reverse(trie* root) {
 
 void print_words(trie* root) {
     static int p = 0;
-    // printf("this is the check for the p that we talked about! = %d\n", p);
     int i;
     node* current = NULL;
     root->word[p++]=root->current->letter;
     if (root->current->end_word) {
         root->word[p] = '\0';
-        printf("%s\t%ld\n",root->word,root->current->count);
+        printf("%s %ld\n",root->word,root->current->count);
     }
     if (root->current->is_leaf) {
         for( i= 0; i < NUM_LETTERS; ++i) {
@@ -277,5 +276,6 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
+
 // it was the best of times, it was the worst of times.
 // it was the age of wisdom, it was the age of foolishness.
