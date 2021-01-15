@@ -169,6 +169,11 @@ void print_words_reverse(trie* root) {
         --p;
         return;
     }
+    if (root->current->end_word) {
+        root->word[p] = '\0';
+        printf("%s %ld\n",root->word,root->current->count);
+    }
+    --p;
 }
 
 void print_trie_reverse(trie* root) {
